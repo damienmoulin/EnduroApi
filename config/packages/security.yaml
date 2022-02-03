@@ -30,4 +30,4 @@ security:
 
     access_control:
         - { path: '/api/[a-zA-Z0-9]{2}/([a-z]{2,3})/forms', roles: IS_AUTHENTICATED_FULLY}
-        - { path: '^/api', roles: [ROLE_ADMIN, ROLE_SUPER_ADMIN] }
+        - { path: '^/api', roles: [ROLE_USER, ROLE_SUPER_ADMIN] }

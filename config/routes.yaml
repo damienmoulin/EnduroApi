@@ -22,12 +22,6 @@ reset_password:
   controller: App\Controller\Security\ResetPasswordController:resetPassword
   methods: [GET, POST]
 
-app_first_login:
-  path: /{locale}/first-login
-  controller: App\Controller\Security\FirstLoginController::firstLogin
-  methods: [GET, POST]
-
-
 # -------------------- User  -------------------------------------------------------------------------------------------
 api_user:
   path: api/v1/{locale}/me
