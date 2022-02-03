@@ -1,0 +1,20 @@
+@import "../base/variables";
+
+.main-content {
+  margin-top: $navbar-height;
+  padding: 33px;
+  transition: transform .4s ease;
+  transform: translateX(60px);
+  width: calc(100% - 60px);
+
+  &--reduce {
+    transform: translateX(260px);
+    width: calc(100% - 260px);
+  }
+}
+
+.wrap {
+  max-width: $wrapper-width + $spacer * 2;
+  padding: 0 $spacer;
+  margin: 0 auto;
+}

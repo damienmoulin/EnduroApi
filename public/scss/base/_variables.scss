@@ -1,0 +1,175 @@
+:root {
+  --dark: #000000;
+  --light: #ffffff;
+  --body: #BDC3C7;
+
+  // Ink
+  --ink-1: #04668C;
+  --ink-2: #F26E22;
+
+  // Shades of greys
+  --grey-1: #333333;
+  --grey-2: #4F4F4F;
+  --grey-3: #828282;
+  --grey-4: #BDBDBD;
+  --grey-5: #E0E0E0;
+  --grey-6: #6C6C6C;
+
+  // Utility
+  --success: #0B8C6B;
+  --info: #079DD9;
+  --warning: #E2B93B;
+  --error: #A6440C;
+
+  // Others
+  --subcolor-1: #073359;
+  --subcolor-2: #1D1D1D;
+  --subcolor-3: #F2A86E;
+
+  --body-bg: #FFFFFF;
+  --body-bg: #FFFFFF;
+  --body-color: #1D1D1D;
+  --text-color: #616269;
+  --text-light: #333333;
+  --text-dark: #191516;
+
+  --hover-table: #81ABD8;
+}
+
+// Base
+
+$font-family-base: "Inter", Arial, sans-serif;
+$font-family-alt: "Inter", Arial, sans-serif;
+$font-family-title: 'Inter', Arial, sans-serif;
+$font-family-button: 'Inter', Arial, sans-serif;
+
+$line-height-base:     24;
+$line-height-small:    12;
+$line-height-large:    32;
+
+$font-size:                 14;
+$font-size-base:            1em;
+$font-size-root:            round($font-size/16 * 100%);
+
+$font-size-phone:                 12;
+$font-size-base-phone:            1em;
+$font-size-root-phone:            round($font-size-phone/16 * 100%);
+
+$max-width-wrapper: 792px;
+
+// Margins
+
+$spacer-s:                  8px;
+$spacer:                    20px;
+$spacer-m:                  32px;
+$spacer-l:                  48px;
+$spacer-xl:                 80px;
+
+// MQ
+
+$phone-down: 319px;
+$phone: 320px;
+$phonePlus: 360px;
+$mobile-down: 540px;
+$mobile: 541px;
+$tab-down: 767px;
+$tab: 768px;
+$desk-down: 1023px;
+$desk: 1024px;
+$large: 1200px;
+$x-large: 1440px;
+
+// Z-Layers Map
+
+$z-layers: (
+        highest:  50,
+        banner:  20,
+        menu:  10,
+        header: 4,
+        main: 3,
+        default: 2
+);
+
+// VIEWS
+
+$grid-columns: 12 !default;
+$gutter-width: 20px !default;
+$outer-margin: 0 !default;
+$breakpoints: sm $tab, md $desk, lg $large, xl $x-large;
+$gutter-compensation: $gutter-width * 0.5 * -1;
+$half-gutter-width: $gutter-width * 0.5;
+
+// Navbar
+
+$navbar-height:             60px;
+
+// Wrapper
+
+$wrapper-width: 792px;
+
+// Border radius
+$border-radius-base: 8px;
+$button-radius-base: $border-radius-base;
+$border-radius-form: 4px;
+
+// Box-shadow
+
+$box-shadow-shortstrong: 0px 2px 8px rgba(0, 0, 0, 0.08);
+$box-shadow-high: 0px 0px 10px rgba(0, 0, 0, 0.2);
+$box-shadow-medium: 0px 4px 24px rgba(51, 51, 51, 0.1);
+$box-shadow-soft: 0px 8px 24px rgba(0, 0, 0, 0.14);
+$box-shadow-base: 0px 8px 30px rgba(0, 0, 0, 0.18);
+$box-shadow-login: 0px 4px 24px rgba(73, 71, 215, 0.1);
+
+$box-shadow-radius: $border-radius-base;
+$box-shadow-radius-base: 16;
+
+// Effects
+
+$shadow-stroke-focus: 0px 0px 0px 3px rgba(17, 157, 164, 0.16);
+$input-form: 0px 1px 2px rgba(0, 0, 0, 0.05);
+$button-shadow-primary: 0px 16px 24px rgba(3, 21, 22, 0.1);
+$button-shadow-secondary: 0px 8px 20px rgba(29, 53, 87, 0.14);
+
+// Transition
+
+$transition-base:           all .1s ease;
+$transition-input:          all .1s ease-out;
+$transition-box:            all .5s ease-out;
+
+// ease in
+
+$ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+$ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+$ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+$ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
+$ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+$ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+$ease-in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+
+// ease out
+
+$ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+$ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+$ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+$ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+$ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+// ease in out
+
+$ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+$ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+$ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+$ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+$ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+$ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+$ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+$bounce: cubic-bezier(0.71, 1.77, 1.24);
+$aside-transition: 0.3s;
+
+$cubic-bg: cubic-bezier(.15,.9,.34,.95);

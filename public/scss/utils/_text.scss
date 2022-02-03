@@ -1,0 +1,59 @@
+// Text
+
+.u-txt {
+  &-uppercase { text-transform: uppercase !important; }
+  &-lowercase { text-transform: lowercase !important; }
+  &-center   { text-align: center !important; }
+  &-left     { text-align: left !important; }
+  &-right    { text-align: right !important; }
+  &-justify  { text-align: justify !important; }
+  &-nowrap   { white-space: nowrap !important; }
+  &-break    { word-wrap: break-word !important; }
+  &-line-through {text-decoration: line-through;}
+  &-underline {text-decoration: underline;}
+  &-no-underline {text-decoration: none!important;}
+  &-dark     { color: var(--dark); }
+  &-regular  { font-weight: 400; }
+  &-semibold  { font-weight: 600; }
+  &-bold     { font-weight: 700; }
+  &-italic     { font-style: italic; }
+  &-light    { color: var(--light); }
+  &-size-s {font-size: em(12); }
+  &-size-m {font-size: em(14); }
+  &-size-l {font-size: em(18); }
+  &-size-xl {font-size: em(20); }
+  &-font-alt {font-family: $font-family-alt; }
+  &-font-title {font-family: $font-family-title; }
+  &-color-ink-1 {color: var(--ink-1);}
+  &-color-ink-2 {color: var(--ink-2);}
+  &-color-grey-1 {color: var(--grey-1);}
+  &-color-grey-2 {color: var(--grey-2);}
+  &-color-grey-3 {color: var(--grey-3);}
+  &-color-grey-4 {color: var(--grey-4);}
+  &-color-grey-5 {color: var(--grey-5);}
+  &-color-subcolor-1 {color: var(--subcolor-1);}
+  &-color-subcolor-2 {color: var(--subcolor-2);}
+  &-color-subcolor-3 {color: var(--subcolor-3);}
+  &-color-text-light {color: var(--text-light);}
+  &-color-text-dark {color: var(--text-dark);}
+  &-color-success {color: var(--success);}
+  &-color-info {color: var(--info);}
+  &-color-warning {color: var(--warning);}
+  &-color-error {color: var(--error);}
+  &-v-align-baseline {vertical-align: baseline;}
+}
+
+.u-txt-with-icon {
+  //@extend %button-reset;
+
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-gap: 8px;
+  align-items: flex-start;
+  margin-bottom: 21px;
+
+  font-size: em(12);
+  font-style: normal;
+  font-weight: 300;
+  line-height: 18px;
+}

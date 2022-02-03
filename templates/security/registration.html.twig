@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'login.title'|trans }}{% endblock %}
+{% block body %}
+    <div class="sidenav" id="map">
+    </div>
+    <div class="main card">
+        <h2 class="text-center title-card">{{ 'register.register' | trans }}</h2>
+
+        <div class="card-body">
+            <div class="login-form">
+                {% include 'security/_register_form.html.twig' %}
+            </div>
+        </div>
+    </div>
+    <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoiZGFtaWVubTc3IiwiYSI6ImNrejJ2dmg2eTAwd3kyeHBnNnRldnF1dmUifQ.yqvd45vJ4OQ_CiftvX6UCg';
+      const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
+        center: [4.311051224439861, 48.274309595826814], // starting position [lng, lat]
+        zoom: 12 // starting zoom
+      });
+    </script>
+{% endblock %}

@@ -1,0 +1,90 @@
+body {
+  font-family: "Lato", sans-serif;
+}
+
+
+
+.main-head{
+  height: 150px;
+  background: #FFF;
+}
+
+.sidenav {
+  height: 100%;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+
+.main {
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 450px) {
+  .login-form{
+    margin-top: 10%;
+  }
+
+  .register-form{
+    margin-top: 10%;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .main{
+    position: absolute;
+    z-index: 99;
+    background: #FFF;
+    width: 500px;
+    top: 40px;
+    bottom: 40px;
+    right: 40px;
+  }
+
+  .card-body {
+    overflow: scroll;
+  }
+
+  .title-card {
+    color: #FFF;
+    background:  #3498db ;
+    margin: -30px 60px 0px 60px;
+    padding: 10px;
+  }
+
+  .sidenav{
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+
+  .login-form{
+    margin:24px;
+  }
+
+  .register-form{
+    margin-top: 20%;
+  }
+}
+
+
+.login-main-text{
+  margin-top: 20%;
+  padding: 60px;
+  color: #fff;
+}
+
+.login-main-text h2{
+  font-weight: 300;
+}
+
+.btn-black{
+  background-color: #000 !important;
+  color: #fff;
+}

@@ -1,0 +1,65 @@
+<form class="login-form align-middle" action="" method="POST">
+    {% if errorMessage %}
+        <div class="alert alert-danger">{{ errorMessage }}</div>
+    {% endif %}
+    <div class="form-content">
+        <div class="form-group">
+            <label for="exampleInputEmail1" class="text-uppercase">{{ 'register.email.label' | trans }}</label>
+            <input type="text" name="email" id="inputEmail" class="form-control" required
+                   placeholder="{{ 'register.email.placeholder' | trans }}">
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="inputPassword" class="text-uppercase">{{ 'register.password.label' | trans }}</label>
+            <input type="password" name="first_password" id="inputPassword" class="form-control" placeholder="{{ 'register.password.placeholder' | trans }}"
+                   required>
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="inputPassword" class="text-uppercase">{{ 'register.password_confirm.label' | trans }}</label>
+            <input type="password" name="second_password" id="inputPassword" class="form-control" placeholder="{{ 'register.password_confirm.placeholder' | trans }}"
+                   required>
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="firstname" class="text-uppercase">{{ 'register.firstname.label' | trans }}</label>
+            <input type="text" name="firstname" id="firstname" class="form-control" placeholder="{{ 'register.firstname.placeholder' | trans }}"
+                   required>
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="lastname" class="text-uppercase">{{ 'register.lastname.label' | trans }}</label>
+            <input type="text" name="lastname" id="lastname" class="form-control" placeholder="{{ 'register.lastname.placeholder' | trans }}"
+                   required>
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="address" class="text-uppercase">{{ 'register.address.label' | trans }}</label>
+            <input type="text" name="address" id="address" class="form-control" placeholder="{{ 'register.address.placeholder' | trans }}"
+                   required>
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="zipcode" class="text-uppercase">{{ 'register.zipcode.label' | trans }}</label>
+            <input type="text" name="zipcode" id="zipcode" class="form-control" placeholder="{{ 'register.zipcode.placeholder' | trans }}"
+                   required>
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="city" class="text-uppercase">{{ 'register.city.label' | trans }}</label>
+            <input type="text" name="city" id="city" class="form-control" placeholder="{{ 'register.city.placeholder' | trans }}"
+                   required>
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="phone" class="text-uppercase">{{ 'register.phone.label' | trans }}</label>
+            <input type="text" name="phone" id="phone" class="form-control" placeholder="{{ 'register.phone.placeholder' | trans }}"
+                   required>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-success">{{ 'register.register' | trans }}</button>
+        <a href="{{ path('app_login') }}" class="btn btn-secondary">{{ 'login.title' | trans }}</a>
+
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+    </div>
+</form>

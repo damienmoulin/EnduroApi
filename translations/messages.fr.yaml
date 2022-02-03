@@ -1,0 +1,75 @@
+enduro: Mon enduro
+exception:
+  login:
+    already_logged: Utilisateur déja authentifié
+register:
+  register: Inscription
+  description: Veuillez vous inscrire
+  email:
+    label: Votre adresse mail
+    placeholder: Email
+  password:
+    label: Votre mot de passe
+    placeholder: Mot de passe
+  password_confirm:
+    label: Confirmation de votre mot de passe
+    placeholder: Mot de passe
+  firstname:
+    label: Prénom
+    placeholder: Prénom
+  lastname:
+    label: Nom
+    placeholder: Nom
+  address:
+    label: Adresse
+    placeholder: Adresse Postale
+  zipcode:
+    label: Code Postal
+    placeholder: Code Postal
+  city:
+    label: Ville
+    placeholder: Ville
+  phone:
+    label: Téléphone
+    placeholder: Téléphone
+login:
+  description: Veuillez vous connecter
+  title: Connexion
+  email:
+    label: Votre adresse mail
+    placeholder: Email
+  password:
+    label: Votre mot de passe
+    placeholder: Mot de passe
+  connect: Se connecter
+
+forgotten:
+  password: Mot de passe oublié
+
+ask-reset-password:
+  title: Mot de passe oublié
+  description: Avez vous oublié votre mot de passe
+  form:
+    inputEmail:
+      label: Email
+    submit: Envoyer
+  success-message: Email envoyé
+
+reset-password:
+  title: Nouveau mot de passe
+  description: Choisir un nouveau mot de passe
+  form:
+    firstPassword:
+      label: Mot de passe
+    secondPassword:
+      label: Mot de passe
+    submit: Changer
+first-login:
+  title: Première connexion
+  description: Veuillez saisir vos mot pde passe
+  form:
+    title: Création de mot de passe
+    firstPassword:
+      label: Mot de passe
+    secondPassword:
+      label: Mot de passe

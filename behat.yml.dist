@@ -1,0 +1,21 @@
+default:
+    suites:
+        default:
+            contexts:
+                - App\Tests\Behat\AuthenticationContext
+                - App\Tests\Behat\CustomerContext
+                - App\Tests\Behat\ProspectContext
+                - Behat\MinkExtension\Context\MinkContext
+                - behatch:context:rest
+                - behatch:context:json
+
+    extensions:
+        FriendsOfBehat\SymfonyExtension:
+            kernel:
+                environment: test
+            bootstrap: tests/bootstrap.php
+        Behat\MinkExtension:
+            sessions:
+                symfony:
+                    symfony: ~
+        Behatch\Extension: ~

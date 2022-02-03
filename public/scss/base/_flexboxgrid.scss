@@ -1,0 +1,324 @@
+// flexbox grid sass
+// based on https://github.com/hugeinc/flexboxgrid-sass
+
+// sass-lint:disable-all
+.flex-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: $gutter-compensation;
+  margin-right: $gutter-compensation;
+
+  &.flex-container--w100 {
+    width: 100%;
+  }
+}
+
+.row.reverse {
+  flex-direction: row-reverse;
+}
+
+.col.reverse {
+  flex-direction: column-reverse;
+}
+
+@include max-screen($desk-down) {
+  .col-reverse--tablet {
+    flex-direction: column-reverse;
+  }
+}
+
+@mixin flexboxgrid-sass-col-common {
+  box-sizing: border-box;
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding-right: $half-gutter-width;
+  padding-left: $half-gutter-width;
+  margin-bottom: $gutter-width / 1.5;
+}
+
+$name: xs;
+
+.flex-container {
+
+  [class^="col-"] {
+    @include flexboxgrid-sass-col-common;
+    flex-basis: 100%;
+  }
+
+  .col-#{$name} {
+    @include flexboxgrid-sass-col-common;
+    flex-basis: auto;
+  }
+
+  @for $i from 1 through $grid-columns {
+    .col-#{$name}-#{$i} {
+      @include flexboxgrid-sass-col-common;
+      flex-basis: 100% / $grid-columns * $i !important;
+      max-width: 100% / $grid-columns * $i;
+    }
+  }
+
+  @for $i from 1 through $grid-columns {
+    .col-#{$name}-offset-#{$i} {
+      @include flexboxgrid-sass-col-common;
+      margin-left: 100% / $grid-columns * $i;
+    }
+  }
+
+  .col-#{$name} {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+
+  .no-col-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  &.no-compensation {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  &.nowrap {
+    flex-wrap: nowrap;
+  }
+
+  &.padding-double {
+
+    @include min-screen($desk) {
+      margin-left: -30px;
+      margin-right: -30px;
+
+      [class^="col-"] {
+        padding: 0 30px !important;
+      }
+    }
+  }
+
+  &.equal-height {
+
+    [class^="col-"] {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+  }
+}
+
+.flex-container {
+  &.start-#{$name} {
+    justify-content: flex-start;
+    text-align: start;
+  }
+
+  &.center-#{$name} {
+    justify-content: center;
+    text-align: center;
+  }
+
+  &.end-#{$name} {
+    justify-content: flex-end;
+    text-align: end;
+  }
+
+  &.top-#{$name} {
+    align-items: flex-start;
+  }
+
+  &.middle-#{$name} {
+    align-items: center;
+  }
+
+  &.bottom-#{$name} {
+    align-items: flex-end;
+  }
+
+  &.baseline-#{$name} {
+    align-items: baseline;
+  }
+
+  &.around-#{$name} {
+    justify-content: space-around;
+  }
+
+  &.between-#{$name} {
+    justify-content: space-between;
+  }
+
+  &.first-#{$name} {
+    order: -1;
+  }
+
+  &.last-#{$name} {
+    order: 1;
+  }
+
+  &.column {
+    flex-direction: column;
+  }
+}
+
+.self {
+  &-baseline {
+    align-self: flex-end;
+  }
+}
+
+.f-grow-inherit {
+  flex-grow: inherit;
+}
+
+@include min-screen($tab-down) {
+
+  .flex-container {
+
+    &.padding {
+      margin-left: $gutter-compensation * 2;
+      margin-right: $gutter-compensation * 2;
+
+      > [class^="col-"] {
+        padding-right: $half-gutter-width * 2;
+        padding-left: $half-gutter-width * 2;
+      }
+    }
+
+    &.no-compensation {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &.no-margin {
+      > [class^="col-"] {
+        margin-bottom: 0;
+      }
+    }
+
+    &.no-padding {
+      > [class^="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+
+    .align-right {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+@each $breakpoint in $breakpoints {
+  $name: nth($breakpoint, 1);
+  $size: nth($breakpoint, 2);
+
+  @media only screen and (min-width: $size) {
+    .flex-container {
+      .col-#{$name} {
+        @include flexboxgrid-sass-col-common;
+
+        flex-basis: auto;
+      }
+
+      @for $i from 1 through $grid-columns {
+        .col-#{$name}-#{$i} {
+          @include flexboxgrid-sass-col-common;
+
+          flex-basis: 100% / $grid-columns * $i !important;
+          max-width: 100% / $grid-columns * $i;
+        }
+      }
+
+      @for $i from 1 through $grid-columns {
+        .col-#{$name}-offset-#{$i} {
+          @include flexboxgrid-sass-col-common;
+
+          margin-left: 100% / $grid-columns * $i;
+        }
+      }
+
+      .col-#{$name} {
+        flex-grow: 1;
+        flex-basis: 0;
+        max-width: 100%;
+      }
+
+      &.start-#{$name} {
+        justify-content: flex-start;
+        text-align: start;
+      }
+
+      &.center-#{$name} {
+        justify-content: center;
+        text-align: center;
+      }
+
+      &.end-#{$name} {
+        justify-content: flex-end;
+        text-align: end;
+      }
+
+      &.top-#{$name} {
+        align-items: flex-start;
+      }
+
+      &.middle-#{$name} {
+        align-items: center;
+      }
+
+      &.bottom-#{$name} {
+        align-items: flex-end;
+      }
+
+      &.around-#{$name} {
+        justify-content: space-around;
+      }
+
+      &.between-#{$name} {
+        justify-content: space-between;
+      }
+
+      &.first-#{$name} {
+        order: -1;
+      }
+
+      &.last-#{$name} {
+        order: 1;
+      }
+    }
+  }
+}
+
+@include max-screen($tab-down) {
+
+  .flex-container {
+
+    &.no-margin-xs {
+
+      [class^="col-"] {
+        margin-bottom: 10px !important;
+      }
+    }
+
+    &.no-padding-xs {
+
+      [class^="col-"] {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    }
+
+    &.padding-xs {
+      margin-left: $gutter-compensation / 2;
+      margin-right: $gutter-compensation / 2;
+
+      [class^="col-"] {
+        padding-left: $half-gutter-width / 2 !important;
+        padding-right: $half-gutter-width / 2 !important;
+      }
+    }
+  }
+}

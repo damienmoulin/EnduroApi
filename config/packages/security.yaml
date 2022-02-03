@@ -1,0 +1,33 @@
+security:
+    encoders:
+        App\Infrastructure\Authentication\User:
+            algorithm: sodium
+
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        # used to reload user from session & other features (e.g. switch_user)
+        app_user_provider:
+            id: App\Infrastructure\Authentication\UserProvider
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        api:
+            pattern: ^/api
+            security: true
+            stateless: true
+            oauth2: true
+        main:
+            anonymous: true
+            lazy: true
+            provider: app_user_provider
+            guard:
+                authenticators:
+                    - App\Infrastructure\Authentication\LoginFormAuthenticator
+            logout:
+                path: app_logout
+                target: app_login
+
+    access_control:
+        - { path: '/api/[a-zA-Z0-9]{2}/([a-z]{2,3})/forms', roles: IS_AUTHENTICATED_FULLY}
+        - { path: '^/api', roles: [ROLE_ADMIN, ROLE_SUPER_ADMIN] }

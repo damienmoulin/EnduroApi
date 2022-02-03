@@ -1,0 +1,25 @@
+@import "../base/variables";
+@import "../base/mixins";
+
+.button {
+  background: none;
+  border-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  outline: 0;
+}
+
+.button--submit {
+  padding: 10px 71px;
+
+  color: var(--light);
+  font-style: normal;
+  font-weight: bold;
+  font-size: em(12);
+  line-height: 16px;
+  text-transform: uppercase;
+
+  background: var(--ink-1);
+
+  border-radius: 4px;
+}

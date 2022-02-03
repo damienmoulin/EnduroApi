@@ -1,0 +1,28 @@
+<form class="login-form align-middle" action="" method="POST">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+    <h2 class="text-center">{{ 'login.connect' | trans }}</h2>
+    <div class="form-group">
+        <label for="exampleInputEmail1" class="text-uppercase">{{ 'login.email.label' | trans }}</label>
+        <input type="text" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required
+               placeholder="{{ 'login.email.placeholder' | trans }}">
+    </div>
+    <br />
+    <div class="form-group">
+        <label for="inputPassword" class="text-uppercase">{{ 'login.password.label' | trans }}</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="{{ 'login.password.placeholder' | trans }}"
+               required>
+    </div>
+
+    <small class="">
+        <a href="{{ path('ask_reset_password') }}"
+           class="button button-primary--outline button--medium u-mtxl">{{ 'forgotten.password'|trans }}
+        </a>
+    </small>
+
+    <br />
+    <button type="submit" class="btn btn-success">{{ 'login.connect' | trans }}</button>
+    <a href="{{ path('app_register') }}" class="btn btn-secondary">{{ 'register.register' | trans }}</a>
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+</form>

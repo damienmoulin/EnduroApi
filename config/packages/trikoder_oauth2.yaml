@@ -1,0 +1,12 @@
+trikoder_oauth2:
+
+    authorization_server:
+        private_key: '%kernel.project_dir%/private.key'
+        encryption_key: '%env(string:OAUTH2_ENCRYPTION_KEY)%'
+        encryption_key_type: defuse
+
+    resource_server:
+        public_key: '%kernel.project_dir%/public.key'
+
+    persistence:
+        doctrine: null

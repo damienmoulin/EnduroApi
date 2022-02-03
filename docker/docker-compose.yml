@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:12.4-alpine
+    container_name: postgres
+    restart: on-failure
+    environment:
+      POSTGRES_DB: enduro
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - ./db-data:/var/lib/postgresql/data:rw
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql:rw
+    ports:
+      - "15431:5432"
+
+  phppgadmin:
+    container_name: phppgadmin
+    image: neimheadh/phppgadmin:latest
+    ports:
+      - "11080:80"
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=root
+      - POSTGRES_PASS=root
+
+  apache:
+    container_name: apache
+    build: ./apache
+    restart: on-failure
+    environment:
+      APP_ENV: dev
+      APP_DEBUG: 1
+      PHP_DATE_TIMEZONE: ${PHP_DATE_TIMEZONE:-UTC}
+      XDEBUG_CONFIG: remote_host=docker.for.mac.localhost
+      PHP_IDE_CONFIG: serverName=localhost
+    ports:
+      - "11082:80"
+    depends_on:
+      - postgres
+    volumes:
+      - "../:/var/www/html"
+      - "./apache/apacheApiHost.conf:/etc/apache2/sites-available/000-default.conf"
+
+  php:
+    container_name: php
+    build: ./php
+    restart: on-failure
+    environment:
+      APP_ENV: dev
+      APP_DEBUG: 1
+      PHP_DATE_TIMEZONE: ${PHP_DATE_TIMEZONE:-UTC}
+      XDEBUG_CONFIG: remote_host=docker.for.mac.localhost
+      PHP_IDE_CONFIG: serverName=localhost
+    depends_on:
+      - postgres
+    volumes:
+      - ../:/app:rw,cached
+      - ~/.ssh/id_rsa:/var/www/.ssh/id_rsa
+
+  mailhog:
+    image: mailhog/mailhog:v1.0.1
+    ports:
+      - "8025:8025"

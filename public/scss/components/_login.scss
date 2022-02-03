@@ -1,0 +1,85 @@
+@import "../base/variables";
+@import "../base/mixins";
+
+.login {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  &__left {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    padding: 100px;
+
+    .logo {
+      text-align: center;
+      img {
+        max-width: 177px;
+        margin-bottom: 98px;
+      }
+    }
+
+    .title {
+      font-family: Inter, serif;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 32px;
+    }
+    .punchline {
+      font-family: Inter, serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 25px;
+      margin-bottom: 56px;
+    }
+    form {
+      width: 100%;
+    }
+    .not-registered-yet {
+      font-family: Inter, serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: var(--grey-6);
+
+      a {
+        text-decoration: underline;
+      }
+    }
+    .copyright {
+      font-family: Inter, serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: var(--grey-6);
+
+      position: absolute;
+      left: 100px;
+      bottom: 15px;
+    }
+  }
+
+  &__right {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--subcolor-3);
+
+    .logo img {
+      max-width: 177px;
+      margin-bottom: 98px;
+    }
+  }
+}

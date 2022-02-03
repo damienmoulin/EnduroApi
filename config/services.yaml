@@ -1,0 +1,46 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
+parameters:
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        bind:
+            $webappHost: '%env(WEBAPP_HOST)%'
+            $emailAuthor: '%env(EMAIL_AUTHOR)%'
+            $docuwareHost: '%env(DOCUWARE_HOST)%'
+            $docuwareLogin: '%env(DOCUWARE_LOGIN)%'
+            $docuwarePassword: '%env(DOCUWARE_PASSWORD)%'
+            $docuwarePathCookie: '%env(DOCUWARE_PATH_COOKIE)%'
+            $docuwareOrganization: '%env(DOCUWARE_ORGANIZATION)%'
+            $docuwareArmoireId: '%env(DOCUWARE_ARMOIRE_ID)%'
+            $pathFolderTmp: '%env(PATH_FOLDER_TMP)%'
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+            - '../src/Tests/'
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+
+    App\Infrastructure\Authentication\AuthorizationCodeListener:
+        tags:
+            - {name: kernel.event_listener, event: 'trikoder.oauth2.authorization_request_resolve', method: onAuthorizationRequestResolve}
+
+    App\Domain\Authentication\UserGateway:
+        class: 'App\Gateway\Authentication\PommUserGateway'
+    App\Domain\Authentication\PasswordEncoder:
+        class: 'App\Infrastructure\Authentication\SymfonyPasswordEncoder'
+    App\Domain\Authentication\PasswordPolicyGateway:
+        class: 'App\Gateway\Authentication\PommPasswordPolicyGateway'

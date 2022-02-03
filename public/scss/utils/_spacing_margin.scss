@@ -1,0 +1,82 @@
+// Margins
+
+.u-ma0 { margin:          0 !important; }
+.u-mt0 { margin-top:      0 !important; }
+.u-mr0 { margin-right:    0 !important; }
+.u-mb0 { margin-bottom:   0 !important; }
+.u-mx0 { margin-left:     0 !important; margin-right:  0 !important; }
+.u-my0 { margin-top:      0 !important; margin-bottom: 0 !important; }
+
+.u-mxAuto { margin-left: auto !important; margin-right: auto !important; }
+
+.u-mas { margin:          $spacer-s / 2 !important; }
+.u-mts { margin-top:      $spacer-s / 2 !important; }
+.u-mrs { margin-right:    $spacer-s / 2 !important; }
+.u-mbs { margin-bottom:   $spacer-s / 2 !important; }
+.u-mxs { margin-left:     $spacer-s / 2 !important; margin-right:  $spacer-s / 2 !important; }
+.u-mys { margin-top:      $spacer-s / 2 !important; margin-bottom: $spacer-s / 2 !important; }
+
+.u-mab { margin:          $spacer / 2 !important; }
+.u-mtb { margin-top:      $spacer / 2 !important; }
+.u-mrb { margin-right:    $spacer / 2 !important; }
+.u-mbb { margin-bottom:   $spacer / 2 !important; }
+.u-mxb { margin-left:     $spacer / 2 !important; margin-right:  $spacer / 2 !important; }
+.u-myb { margin-top:      $spacer / 2 !important; margin-bottom: $spacer / 2 !important; }
+
+.u-mam { margin:          $spacer-m / 2 !important; }
+.u-mtm { margin-top:      $spacer-m / 2 !important; }
+.u-mrm { margin-right:    $spacer-m / 2 !important; }
+.u-mbm { margin-bottom:   $spacer-m / 2 !important; }
+.u-mxm { margin-left:     $spacer-m / 2 !important; margin-right:  $spacer-m / 2 !important; }
+.u-mym { margin-top:      $spacer-m / 2 !important; margin-bottom: $spacer-m / 2 !important; }
+
+.u-mal { margin:          $spacer-l / 2 !important; }
+.u-mtl { margin-top:      $spacer-l / 2 !important; }
+.u-mrl { margin-right:    $spacer-l / 2 !important; }
+.u-mbl { margin-bottom:   $spacer-l / 2 !important; }
+.u-mxl { margin-left:     $spacer-l / 2 !important; margin-right:  $spacer-l / 2 !important; }
+.u-myl { margin-top:      $spacer-l / 2 !important; margin-bottom: $spacer-l / 2 !important; }
+
+.u-maxl { margin:          $spacer-xl / 2 !important; }
+.u-mtxl { margin-top:      $spacer-xl / 2 !important; }
+.u-mrxl { margin-right:    $spacer-xl / 2 !important; }
+.u-mbxl { margin-bottom:   $spacer-xl / 2 !important; }
+.u-mxxl { margin-left:     $spacer-xl / 2 !important; margin-right:  $spacer-xl / 2 !important; }
+.u-myxl { margin-top:      $spacer-xl / 2 !important; margin-bottom: $spacer-xl / 2 !important; }
+
+@include min-screen($desk) {
+  .u-mas { margin:          $spacer-s !important; }
+  .u-mts { margin-top:      $spacer-s !important; }
+  .u-mrs { margin-right:    $spacer-s !important; }
+  .u-mbs { margin-bottom:   $spacer-s !important; }
+  .u-mxs { margin-left:     $spacer-s !important; margin-right:  $spacer-s !important; }
+  .u-mys { margin-top:      $spacer-s !important; margin-bottom: $spacer-s !important; }
+
+  .u-mab { margin:          $spacer !important; }
+  .u-mtb { margin-top:      $spacer !important; }
+  .u-mrb { margin-right:    $spacer !important; }
+  .u-mbb { margin-bottom:   $spacer !important; }
+  .u-mxb { margin-left:     $spacer !important; margin-right:  $spacer !important; }
+  .u-myb { margin-top:      $spacer !important; margin-bottom: $spacer !important; }
+
+  .u-mam { margin:          $spacer-m !important; }
+  .u-mtm { margin-top:      $spacer-m !important; }
+  .u-mrm { margin-right:    $spacer-m !important; }
+  .u-mbm { margin-bottom:   $spacer-m !important; }
+  .u-mxm { margin-left:     $spacer-m !important; margin-right:  $spacer-m !important; }
+  .u-mym { margin-top:      $spacer-m !important; margin-bottom: $spacer-m !important; }
+
+  .u-mal { margin:          $spacer-l !important; }
+  .u-mtl { margin-top:      $spacer-l !important; }
+  .u-mrl { margin-right:    $spacer-l !important; }
+  .u-mbl { margin-bottom:   $spacer-l !important; }
+  .u-mxl { margin-left:     $spacer-l !important; margin-right:  $spacer-l !important; }
+  .u-myl { margin-top:      $spacer-l !important; margin-bottom: $spacer-l !important; }
+
+  .u-maxl { margin:          $spacer-xl !important; }
+  .u-mtxl { margin-top:      $spacer-xl !important; }
+  .u-mrxl { margin-right:    $spacer-xl !important; }
+  .u-mbxl { margin-bottom:   $spacer-xl !important; }
+  .u-mxxl { margin-left:     $spacer-xl !important; margin-right:  $spacer-xl !important; }
+  .u-myxl { margin-top:      $spacer-xl !important; margin-bottom: $spacer-xl !important; }
+}
